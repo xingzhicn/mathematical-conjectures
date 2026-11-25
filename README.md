@@ -1,4 +1,4 @@
-# Open problems for Euclidean tensor geometry
+# Mathematical Conjectures
 
 A research agenda for applying Euclidean spectral prices to polynomial identity testing, multipartite entanglement, proof complexity, matrix rigidity, additive combinatorics, coding theory, and network information theory.
 
