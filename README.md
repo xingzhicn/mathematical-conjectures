@@ -4,10 +4,12 @@ A research agenda for applying Euclidean spectral prices to polynomial identity 
 
 The cited preprints provide mathematical inputs for this agenda. Each problem page states which steps follow from those inputs and identifies the additional claim required to reach the target. The research notes make no priority claim for the proposed applications.
 
+The [November 25 research batch](drafts/10_NEW_ROUTES_AND_CONJECTURES_20261125_001/README.md) investigated all six problems. Under the cited tensor curvature and Euclidean price theorems, the four-party exact conversion rate tends to $1/\sqrt2$ as the local dimension grows. The batch also derives a mixed-partition rank lower bound for a reciprocal IPS table and a sharp query bound for Boolean dominance when each update touches at most two cells.
+
 | Problem | Concrete target |
 | --- | --- |
 | [Black-box polynomial identity testing](problems/01-black-box-pit.md) | Extend the Hamiltonian-cycle hardness transfer to polynomial-degree circuits in small characteristic. |
-| [Multipartite entanglement](problems/02-multipartite-entanglement.md) | Determine the rate for an explicit four-party transposition with identical cut ranks. |
+| [Multipartite entanglement](problems/02-multipartite-entanglement.md) | Determine the finite-dimensional rate for an explicit four-party transposition and construct maps attaining the large-dimension limit. |
 | [Ideal Proof System](problems/03-ideal-proof-system.md) | Lower-bound the smallest certificate in a specified affine family of refutations. |
 | [Matrix rigidity and range sums](problems/04-rigidity-and-range-sums.md) | Obtain a rank–sparsity tradeoff for an explicit matrix and justify its data structure consequences. |
 | [Four-term progressions and local decoding](problems/05-progressions-and-local-decoding.md) | Test a four-site price inequality relevant to progression-free sets and identify a separate encoding for local decoding. |
