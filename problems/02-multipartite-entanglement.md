@@ -13,7 +13,9 @@ R(X_q,Y_q)\le\frac{\log_2 q+1}{\sqrt2\log_2\lfloor q/2\rfloor},\qquad q\ge4 .
 $$
 The bound is strictly below one at $q=64$. [Proof](https://github.com/xingzhicn/four-party-tensor-conversion)
 
-**Open target.** Determine the exact rate for this pair, or match the leading $q\to\infty$ upper bound with explicit grouped local maps. A further comparison would determine what established spectral functionals already certify on the pair.
+There is an exact three-copy protocol giving $R(X_q,Y_q)\ge 1/3$. Contract parties 1 and 4 of an auxiliary $X_q$ against the same coordinate covector $e_j^*$. The coefficient matrix left at parties 2 and 3 is $2I+e_je_j^{\mathsf T}$. It is invertible over $\mathbb C$, so a local map gives one dimension-$q$ equality wire between them. Two auxiliary copies give two such wires. On a third, intact copy, contract party 2's input against its endpoint of the first wire and party 3's input against its endpoint of the second, using equality covectors. The free endpoints now carry the two exchanged indices. This gives exactly $Y_q$ under grouped local maps. The protocol does not use the price theorem.
+
+**Open target.** Determine the exact rate for this pair, or match the leading $q\to\infty$ upper bound with explicit grouped local maps. A first achievable-rate target is a joint conversion beating one output per three input copies. A further comparison would determine what established spectral functionals already certify on the pair.
 
 For the three-party EPR triangle, the logarithmic GHZ cost per unit wire dimension in the asymptotic tensor-rank model is $9/4$ under the cited matrix multiplication theorem. The distinct four-party rates above remain to be determined. [Matrix multiplication preprint][mm]
 

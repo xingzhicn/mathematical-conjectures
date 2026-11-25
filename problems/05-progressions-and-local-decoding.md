@@ -10,6 +10,12 @@ Every balanced flattening is a $25\times25$ permutation matrix since any two dis
 
 **Sufficient geometric inequality.** Over a specified coefficient field, find a placement $S$ of positive width and an admissible Euclidean price for which $H(T;S)<W(S)\log_2 5$. By additivity and local monotonicity this implies $|A|\le 2^{nH(T;S)/W(S)}$, which gives the desired exponential saving. A strict price upper bound is the missing mathematical step. The progression coordinates lie in $\mathbb F_5$, and the field of tensor coefficients may be chosen separately. [Euclidean price theorem][geometry]
 
+Fix any one progression coordinate to zero by a local coordinate covector. The remaining three coordinates are distinct nonzero multiples of the free difference $b$ in $\mathbb F_5$, so separate permutations of their bases identify the slice with a three-party diagonal of size five. This works in every coefficient field. For sites $x_1,\ldots,x_4$ and $S=\{x_1,\ldots,x_4\}$, monotonicity gives
+$$
+H(T;S)\ \ge\ \max_i W(\{x_j:j\ne i\})\log_2 5.
+$$
+Thus the proposed strict saving requires each of the four sites to lie outside the convex hull of the other three. In particular every collinear placement fails this test. Convex quadrilaterals and tetrahedra survive this necessary condition. Obtaining a strict upper bound there remains open.
+
 ## Three-query local decoding
 
 Specify a fixed alphabet, message length $k$, constant tolerated corruption fraction $\delta>0$, and constant success advantage over random guessing. The target is a superpolynomial lower bound on codeword length $N$ for three-query locally decodable codes in the stated model. Binary linear codes form a precise initial class.

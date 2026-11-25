@@ -12,7 +12,20 @@ In the hybrid argument a missed target yields a polynomial $R(X,Y)$ with a polyn
 
 ## Direct geometric hitting set
 
-For a separate restricted model, take degree-four set-multilinear forms whose coefficient tensor is a sum of two tensors with flattening rank at most $R$ across $12\mid34$ and $14\mid23$, respectively. For $\ell$ coordinates of dimension $d$ per site, one can form $(d^4-1)^\ell$ product evaluations from local tests whose common kernel in one coordinate consists of the crossing pair of equality wires of dimension $d$. A Euclidean price comparison excludes this kernel from the two-partition class for $R=d^\rho$, fixed $\rho<\sqrt2$, and sufficiently large $d$. Local contractions preserve the two rank bounds, which propagates the exclusion across the $\ell$ coordinates. The query count is smaller than the $d^{4\ell}$ coefficient queries of full interpolation. An extension would construct a larger local kernel whose nonzero tensors all satisfy a uniform price separation from the tested class. [Price calculus][prices]
+For a separate restricted model, take degree-four set-multilinear forms whose coefficient tensor is a sum of two tensors with flattening rank at most $R$ across $12\mid34$ and $14\mid23$, respectively. For $\ell$ coordinates of dimension $d$ per site, one can form $(d^4-1)^\ell$ product evaluations from local tests whose common kernel in one coordinate consists of the crossing pair of equality wires of dimension $d$. A Euclidean price comparison excludes this kernel from the two-partition class for $R=d^\rho$, fixed $\rho<\sqrt2$, and sufficiently large $d$. Local contractions preserve the two rank bounds, which propagates the exclusion across the $\ell$ coordinates. The query count is smaller than the $d^{4\ell}$ coefficient queries of full interpolation. The following construction enlarges the local kernel while keeping a uniform geometric lower bound on its nonzero elements. [Price calculus][prices]
+
+### A larger query kernel from a linear code
+
+Let $C\subset F^d$ be an $h$-dimensional linear code with minimum Hamming distance $s$. Use the four-site kernel
+$$
+K_C=\left\{\left(\sum_i c_i e_i^{(1)}\otimes e_i^{(3)}\right)
+\otimes\left(\sum_j e_j^{(2)}\otimes e_j^{(4)}\right):c\in C\right\}.
+$$
+Every nonzero word has at least $s$ nonzero entries. Select $s$ of them, rescale on site 1, and truncate the second wire to $s$ entries. This restricts the tensor to two crossing equality wires of dimension $s$. The same geometric exclusion therefore works whenever the two partition ranks are bounded by $R<r_s$, where $r_s$ is the crossing rank of that wire pair.
+
+The annihilator of $K_C$ has a basis of legal product evaluations. On sites 1 and 3, take all off-diagonal coordinate evaluations and the products $\mathbf 1\otimes w$ for a basis of $C^\perp$. They annihilate the first wire family and are independent, as seen by reading off the diagonal. Extend them to a product basis by adding $h$ diagonal coordinate evaluations. On sites 2 and 4, do the same with the repetition code, which needs one additional coordinate evaluation. In the product of the two extended bases, discard the $h$ pairs in which both evaluations are additional. The remaining $d^4-h$ evaluations are independent and annihilate $K_C$, so dimension gives equality. Iterating by local contractions gives $(d^4-h)^\ell$ queries.
+
+For $|F|\ge d$, evaluate polynomials of degree less than $h=\lfloor d/2\rfloor$ at $d$ distinct points. The root bound gives $s=d-h+1$. Hence for each fixed $\rho<\sqrt 2$ the geometric exclusion still applies to $R\le d^\rho$ for sufficiently large $d$, by the cited sharp crossing exponent. This improves the one-direction kernel within this construction. Its complexity relative to other hitting sets for the same class is open here.
 
 [hc]: https://github.com/openai/math/blob/3344da59991ed94f9ba711217b29c1d760badfa6/preprints/Circuit-lower-bounds-for-Hamiltonian-cycle-and-the-permanent-November-24-2026/paper.pdf
 [prices]: https://github.com/openai/math/blob/3344da59991ed94f9ba711217b29c1d760badfa6/preprints/Euclidean-geometry-in-the-asymptotic-spectrum-of-tensors-November-24-2026/build/prices.tex
